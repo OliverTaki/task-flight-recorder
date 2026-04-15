@@ -1,16 +1,15 @@
 @echo off
-echo Checking Task Flight Recorder status...
-tasklist | findstr python
-if %errorlevel%==0 (
-    echo Python process found.
-) else (
-    echo Not running.
-)
+cd /d "%~dp0"
 
-if exist tfr.db (
-    echo.
-    echo DB status:
-    for %%I in (tfr.db) do echo Last modified: %%~tI
-) else (
-    echo No DB file found.
-)
+echo ========================================
+echo Task Flight Recorder Status
+echo ========================================
+echo.
+
+python -m tfr.cli status
+
+echo.
+echo Exit code: %ERRORLEVEL%
+echo.
+
+pause
