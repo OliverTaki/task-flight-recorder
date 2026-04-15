@@ -1,0 +1,12 @@
+# TFR runtime files
+tfr.db
+tfr.pid
+tfr.log
+events/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
